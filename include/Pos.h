@@ -3,7 +3,9 @@
 
 class Pos {
 public:
-    explicit Pos(int x = 0, int y = 0);
+    Pos();
+
+    Pos(int x, int y);
 
     virtual ~Pos() = default;
 
