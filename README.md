@@ -35,7 +35,7 @@ classDiagram
         + won : boolean
         + makeTurn(playField : char[][]) Turn
     }
-    class Human
+    class HumanPlayer
     class HoriBot
     class VertBot
     class RandBot
@@ -55,7 +55,7 @@ classDiagram
         + showResult(playField : char[][], player1 : Player, player2 : Player)
     }
     %% Relationships
-    Human --|> Player
+    HumanPlayer --|> Player
     HoriBot  --|> Player
     VertBot --|> Player
     RandBot --|> Player
@@ -63,7 +63,7 @@ classDiagram
     Turn --> Pos
     Menu --> Pos
     Player --> Turn
-    Human --> Menu
+    HumanPlayer --> Menu
     Game --> Menu
     Game --> GameStatus
     Game --> Player

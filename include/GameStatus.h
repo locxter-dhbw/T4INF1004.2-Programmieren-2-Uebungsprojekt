@@ -1,0 +1,4 @@
+#ifndef GAMESTATUS_H
+#define GAMESTATUS_H
+
+#endif //GAMESTATUS_H
