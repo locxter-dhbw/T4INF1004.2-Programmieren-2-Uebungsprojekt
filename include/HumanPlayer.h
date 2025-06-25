@@ -6,6 +6,8 @@ class HumanPlayer : public Player {
 public:
     HumanPlayer(char symbol, std::string name);
 
+    virtual ~HumanPlayer() = default;
+
     Turn makeTurn(char playField[ROWS][COLS]) override;
 
     char getSymbol() override;

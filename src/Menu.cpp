@@ -1,5 +1,4 @@
 #include "../include/Menu.h"
-
 #include "../include/HumanPlayer.h"
 
 std::shared_ptr<Player> Menu::getPlayer() {
@@ -16,6 +15,6 @@ Pos Menu::getPos() {
     return Pos();
 }
 
-void Menu::showResult(char playField[ROWS][COLS], std::shared_ptr<Player>player1, std::shared_ptr<Player>player2) {
+void Menu::showResult(char playField[ROWS][COLS], std::shared_ptr<Player> player1, std::shared_ptr<Player> player2) {
     // TODO Implement functionality
 }

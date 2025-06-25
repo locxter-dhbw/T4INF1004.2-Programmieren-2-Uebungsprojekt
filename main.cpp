@@ -1,8 +1,4 @@
-#include <iostream>
-
 #include "include/Game.h"
-#include "include/HumanPlayer.h"
-#include "include/Player.h"
 
 int main() {
     Game myGame = Game();

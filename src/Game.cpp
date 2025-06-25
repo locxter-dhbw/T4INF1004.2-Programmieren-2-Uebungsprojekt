@@ -1,5 +1,4 @@
 #include "../include/Game.h"
-
 #include "../include/Menu.h"
 
 Game::Game() : m_status(GameStatus::IDLE) {
@@ -22,19 +21,19 @@ void Game::run() {
     while (true) {
         auto turn = m_player1->makeTurn(m_playField);
         m_playField[turn.getPos().getY()][turn.getPos().getX()] = turn.getSymbol();
-        if (playerHasWon(m_player1)) {
+        if (hasPlayerWon(m_player1)) {
             m_player1->setWon(true);
             break;
-        } else if (playerHasWon(m_player2)) {
+        } else if (hasPlayerWon(m_player2)) {
             m_player2->setWon(true);
             break;
         }
         turn = m_player2->makeTurn(m_playField);
         m_playField[turn.getPos().getY()][turn.getPos().getX()] = turn.getSymbol();
-        if (playerHasWon(m_player1)) {
+        if (hasPlayerWon(m_player1)) {
             m_player1->setWon(true);
             break;
-        } else if (playerHasWon(m_player2)) {
+        } else if (hasPlayerWon(m_player2)) {
             m_player2->setWon(true);
             break;
         }
@@ -47,7 +46,7 @@ void Game::finish() {
     Menu::showResult(m_playField, m_player1, m_player2);
 }
 
-bool Game::playerHasWon(std::shared_ptr<Player> player) {
+bool Game::hasPlayerWon(std::shared_ptr<Player> player) {
     // TODO Implement functionality
     return true;
 }

@@ -1,7 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 #include <memory>
-
 #include "Constants.h"
 #include "GameStatus.h"
 #include "Player.h"
@@ -9,6 +8,8 @@
 class Game {
 public:
     Game();
+
+    virtual ~Game() = default;
 
     void initialize();
 
@@ -22,7 +23,7 @@ private:
     std::shared_ptr<Player> m_player2;
     GameStatus m_status;
 
-    bool playerHasWon(std::shared_ptr<Player> player);
+    bool hasPlayerWon(std::shared_ptr<Player> player);
 };
 
 #endif //GAME_H

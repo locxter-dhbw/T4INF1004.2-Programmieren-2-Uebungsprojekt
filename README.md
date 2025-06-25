@@ -20,6 +20,7 @@ classDiagram
         + initialize() void
         + run() void
         + finish() void
+        - hasPlayerWon(player : Player) boolean
     }
     class GameStatus {
         <<enumeration>>

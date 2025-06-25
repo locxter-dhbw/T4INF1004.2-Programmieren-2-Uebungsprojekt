@@ -2,7 +2,6 @@
 #define VERTBOT_H
 
 class VertBot {
-
 };
 
 #endif //VERTBOT_H

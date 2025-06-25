@@ -1,13 +1,13 @@
 #include "../include/Turn.h"
 
 Turn::Turn(char symbol)
-        : m_symbol(symbol),
-          m_pos(Pos()) {
+    : m_symbol(symbol),
+      m_pos(Pos()) {
 }
 
 Turn::Turn(char symbol, const Pos pos)
-        : m_symbol(symbol),
-          m_pos(pos) {
+    : m_symbol(symbol),
+      m_pos(pos) {
 }
 
 char Turn::getSymbol() const {
