@@ -20,6 +20,7 @@ void Game::run() {
     m_status = GameStatus::RUNNING;
     while (true) {
         auto turn = m_player1->makeTurn(m_playField);
+        // TODO Check if position is already occupied by competitor
         m_playField[turn.getPos().getY()][turn.getPos().getX()] = turn.getSymbol();
         if (hasPlayerWon(m_player1)) {
             m_player1->setWon(true);
@@ -47,6 +48,32 @@ void Game::finish() {
 }
 
 bool Game::hasPlayerWon(std::shared_ptr<Player> player) {
-    // TODO Implement functionality
-    return true;
+    // TODO Combine into one coherent status check with Player class
+    // Check rows
+    for (int i = 0; i < ROWS; ++i) {
+        int consecutiveSymbols = 0;
+        for (int j = 0; j < COLS; ++j) {
+            if (m_playField[i][j] == player->getSymbol())
+                consecutiveSymbols++;
+            else
+                consecutiveSymbols = 0;
+            if (consecutiveSymbols >= 4)
+                return true;
+        }
+    }
+    // Check columns
+    for (int i = 0; i < COLS; ++i) {
+        int consecutiveSymbols = 0;
+        for (int j = 0; j < ROWS; ++j) {
+            if (m_playField[j][i] == player->getSymbol())
+                consecutiveSymbols++;
+            else
+                consecutiveSymbols = 0;
+            if (consecutiveSymbols >= 4)
+                return true;
+        }
+    }
+    // Check diagonals
+    // TODO Check diagonals for consecutive symbols
+    return false;
 }
