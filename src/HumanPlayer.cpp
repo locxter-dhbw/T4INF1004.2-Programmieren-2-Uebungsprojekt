@@ -6,7 +6,10 @@ HumanPlayer::HumanPlayer(char symbol, std::string name) : m_symbol(symbol), m_na
 }
 
 Turn HumanPlayer::makeTurn(char playField[ROWS][COLS]) {
-    // TODO Implement functionality
+    Turn turn = Turn(m_symbol);
+    Menu::showPlayField(playField);
+    turn.setPos(Menu::getPos());
+    return turn;
 }
 
 char HumanPlayer::getSymbol() {
